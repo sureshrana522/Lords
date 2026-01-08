@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lord's Bespoke Tailor System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Cinzel', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+              display: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              gold: {
+                100: '#FBF5B7',
+                200: '#FCF6BA',
+                300: '#EEDC82',
+                400: '#D4AF37',
+                500: '#C5A028',
+                600: '#B49018',
+                700: '#AA771C',
+                800: '#8A600F',
+                900: '#5C400A',
+              },
+              black: {
+                950: '#050505',
+                900: '#0a0a0a',
+                850: '#121212',
+                800: '#1a1a1a',
+              }
+            },
+            backgroundImage: {
+              'luxury-gradient': 'radial-gradient(circle at center, #1a1a1a 0%, #000000 100%)',
+              'gold-gradient': 'linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%)',
+              'gold-subtle': 'linear-gradient(to bottom right, #D4AF37, #8A600F)',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #f5f5f5;
+        overflow-x: hidden;
+      }
+
+      /* Premium Gold Text Gradient */
+      .text-gold-premium {
+        background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0px 2px 10px rgba(212, 175, 55, 0.2);
+      }
+
+      /* Animated Shine for Buttons */
+      .bg-gold-shine {
+         background: linear-gradient(110deg, #aa771c 8%, #d4af37 18%, #aa771c 33%);
+         background-size: 200% 100%;
+         animation: shine 4s linear infinite;
+      }
+      @keyframes shine {
+        to { background-position-x: -200%; }
+      }
+
+      /* LAHER (WAVE) EFFECT */
+      .card-laher {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(145deg, #101010, #0a0a0a);
+        transition: all 0.3s ease;
+      }
+      
+      .card-laher::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 150%;
+        height: 100%;
+        background: linear-gradient(
+          90deg, 
+          transparent, 
+          rgba(212, 175, 55, 0.05), 
+          rgba(212, 175, 55, 0.1), 
+          rgba(212, 175, 55, 0.05), 
+          transparent
+        );
+        transform: skewX(-20deg);
+        animation: laherMove 6s infinite ease-in-out;
+        pointer-events: none;
+      }
+
+      @keyframes laherMove {
+        0% { left: -150%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+      }
+
+      .card-laher:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.15);
+        border-color: rgba(212, 175, 55, 0.4);
+      }
+
+      /* Glassmorphism Utilities */
+      .glass-panel {
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0a0a0a;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #333, #555);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #8A600F;
+      }
+
+      .animate-fade-in { animation: fadeIn 0.5s ease-out forwards; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      
+      .animate-slide-in-left { animation: slideInLeft 0.3s ease-out forwards; }
+      @keyframes slideInLeft { from { transform: translateX(-100%); } to { transform: translateX(0); } }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- FIXED PATH: Points to ./index.tsx for current environment -->
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
