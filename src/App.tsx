@@ -9,14 +9,14 @@ import {
   Users, BarChart3, Share2, Copy, Link as LinkIcon, ChevronDown, ChevronUp, Hourglass, RefreshCw,
   BookOpen, Hammer, CircleDollarSign, BellRing
 } from 'lucide-react';
-import { Card, Button, Badge, Input } from './components/SharedComponents';
+import { Card, Button, Badge, Input } from './SharedComponents';
 import { 
   Department, UserRole, OrderStatus, ItemType, Worker, Order, MaterialItem, MeasurementData, PaymentRequest, PaymentStatus
 } from './types';
 import { 
   MOCK_WORKERS, ROLE_LABELS, ITEM_RATES, getWorkerRate, MAGIC_DISTRIBUTION_PERCENTAGES, INITIAL_MATERIALS, DISTRIBUTION_PERCENTAGES, DOWNLINE_DISTRIBUTION_PERCENTAGES, MOCK_ORDERS 
 } from './constants';
-import { getOrdersForRole, getNextRole } from './services/logic';
+import { getOrdersForRole, getNextRole } from './logic';
 
 // --- Components ---
 
